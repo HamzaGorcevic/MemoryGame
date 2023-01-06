@@ -1,8 +1,10 @@
 let cardInner = document.querySelector(".flip-card-inner");
 
 let main = document.querySelector(".main");
+let easy = document.querySelector(".easy");
+let medium = document.querySelector(".medium");
 
-let slike = [
+let slikeArr = [
   "banana.png",
   "apple.jpg",
   "orange.png",
@@ -10,6 +12,23 @@ let slike = [
   "apple.jpg",
   "orange.png",
 ];
+easy.addEventListener("click", () => {
+  document.querySelector(".startMain").style.display = "none";
+  slike();
+  createTable();
+});
+
+medium.addEventListener("click", () => {
+  document.querySelector(".startMain").style.display = "none";
+  slikeArr.push("berry.jpg", "berry.jpg", "images.jpg", "images.jpg");
+  slike();
+  createTable();
+});
+
+function slike() {
+  console.log(slikeArr);
+  return slikeArr;
+}
 
 let chosenCards = [];
 let idOfCards = [];
@@ -17,7 +36,7 @@ let wonCards = [];
 let editArray = [];
 
 function createTable() {
-  const shuffledArray = slike.sort((a, b) => 0.5 - Math.random());
+  const shuffledArray = slike().sort((a, b) => 0.5 - Math.random());
   console.log(shuffledArray);
 
   shuffledArray.map((el, index) => {
@@ -38,7 +57,6 @@ function createTable() {
     Card.addEventListener("click", flipCard);
   });
 }
-createTable();
 
 function flipCard(el) {
   let idOfCard = this.getAttribute("data-id");
@@ -51,13 +69,12 @@ function flipCard(el) {
   if (chosenCards.length == 2) {
     setTimeout(() => {
       var cards = document.querySelectorAll("img");
-      console.log(cards);
+      console.log(cards[0]);
 
       if (idOfCards[0] != idOfCards[1] && chosenCards[0] == chosenCards[1]) {
-        console.log(idOfCards[0] != idOfCards[1]);
         wonCards.push(chosenCards[0]);
 
-        if (wonCards.length == 3) {
+        if (wonCards.length == slike().length / 2) {
           wonCards = [];
           playAgain = document.createElement("button");
           playAgain.innerText = "Play again";

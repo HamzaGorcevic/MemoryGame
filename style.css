@@ -51,7 +51,7 @@
   top: 0;
   left: 0;
   backface-visibility: hidden;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 
 .rotate {
@@ -60,4 +60,48 @@
 
 .rotateBack {
   transform: rotateY(180deg);
+}
+.startMain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    black 49%,
+    rgb(44, 43, 43) 50%,
+    rgb(216, 216, 216) 100%
+  );
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.startBtn {
+  background: linear-gradient(
+    to right,
+    rgb(255, 255, 255) 50%,
+    rgb(0, 0, 0) 50%
+  );
+
+  width: 11rem;
+  height: 4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 1s ease;
+  opacity: 0.6;
+}
+
+.startBtn p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.startBtn:hover {
+  opacity: 1;
 }
