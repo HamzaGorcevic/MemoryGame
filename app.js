@@ -15,14 +15,30 @@ let slikeArr = [
 easy.addEventListener("click", () => {
   document.querySelector(".startMain").style.display = "none";
   slike();
-  createTable();
+  createTable("easy");
 });
 
 medium.addEventListener("click", () => {
   document.querySelector(".startMain").style.display = "none";
   slikeArr.push("berry.jpg", "berry.jpg", "images.jpg", "images.jpg");
   slike();
-  createTable();
+  createTable("medium");
+});
+
+document.querySelector(".hard").addEventListener("click", () => {
+  document.querySelector(".startMain").style.display = "none";
+  slikeArr.push(
+    "berry.jpg",
+    "berry.jpg",
+    "images.jpg",
+    "images.jpg",
+    "potato.jpg",
+    "potato.jpg",
+    "carrot.jpg",
+    "carrot.jpg"
+  );
+  slike();
+  createTable("hard");
 });
 
 function slike() {
@@ -35,7 +51,7 @@ let idOfCards = [];
 let wonCards = [];
 let editArray = [];
 
-function createTable() {
+function createTable(mode) {
   const shuffledArray = slike().sort((a, b) => 0.5 - Math.random());
   console.log(shuffledArray);
 
@@ -46,6 +62,7 @@ function createTable() {
     img.setAttribute("src", el);
     img.classList.add("imgFront");
     Card.classList.add("card");
+    mode != "easy" ? Card.classList.add("hard") : "";
     Card.append(img);
 
     let back = document.createElement("div");

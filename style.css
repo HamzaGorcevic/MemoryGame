@@ -32,6 +32,11 @@
   height: 10rem;
   position: relative;
 }
+.hard {
+  width: 8rem;
+  height: 8rem;
+  position: relative;
+}
 
 .imgFront {
   width: 100%;
