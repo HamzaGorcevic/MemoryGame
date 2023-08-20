@@ -3,14 +3,14 @@ let cardInner = document.querySelector(".flip-card-inner");
 let main = document.querySelector(".main");
 let easy = document.querySelector(".easy");
 let medium = document.querySelector(".medium");
-
+let chances = 0;
 let slikeArr = [
-  "banana.png",
-  "apple.jpg",
-  "orange.png",
-  "banana.png",
-  "apple.jpg",
-  "orange.png",
+  "yasuo.jpg",
+  "crow.png",
+  "leesin.jpg",
+  "yasuo.jpg",
+  "crow.png",
+  "leesin.jpg",
 ];
 easy.addEventListener("click", () => {
   document.querySelector(".startMain").style.display = "none";
@@ -20,7 +20,7 @@ easy.addEventListener("click", () => {
 
 medium.addEventListener("click", () => {
   document.querySelector(".startMain").style.display = "none";
-  slikeArr.push("berry.jpg", "berry.jpg", "images.jpg", "images.jpg");
+  slikeArr.push("robot.jpg", "robot.jpg", "tiger.png", "tiger.png");
   slike();
   createTable("medium");
 });
@@ -28,14 +28,14 @@ medium.addEventListener("click", () => {
 document.querySelector(".hard").addEventListener("click", () => {
   document.querySelector(".startMain").style.display = "none";
   slikeArr.push(
-    "berry.jpg",
-    "berry.jpg",
-    "images.jpg",
-    "images.jpg",
-    "potato.jpg",
-    "potato.jpg",
-    "carrot.jpg",
-    "carrot.jpg"
+    "robot.jpg",
+    "robot.jpg",
+    "tiger.png",
+    "tiger.png",
+    "crocodile.png",
+    "crocodile.png",
+    "lion.png",
+    "lion.png"
   );
   slike();
   createTable("hard");
@@ -50,8 +50,13 @@ let chosenCards = [];
 let idOfCards = [];
 let wonCards = [];
 let editArray = [];
-
+let counter = 0;
+let time = document.querySelector(".time");
 function createTable(mode) {
+  let counting = setInterval(() => {
+    counter++;
+    time.innerHTML = `${counter}`;
+  }, 1000);
   const shuffledArray = slike().sort((a, b) => 0.5 - Math.random());
   console.log(shuffledArray);
 
@@ -74,7 +79,11 @@ function createTable(mode) {
     Card.addEventListener("click", flipCard);
   });
 }
-
+let playAgain = document.querySelector(".playAgain");
+let resultTime = document.querySelector(".timeE");
+let resultMistakes = document.querySelector(".scoreE");
+let ended = document.querySelector(".end");
+let chancesEl = document.querySelector(".score");
 function flipCard(el) {
   let idOfCard = this.getAttribute("data-id");
   this.children[0].classList.add("rotate");
@@ -90,19 +99,19 @@ function flipCard(el) {
 
       if (idOfCards[0] != idOfCards[1] && chosenCards[0] == chosenCards[1]) {
         wonCards.push(chosenCards[0]);
-
         if (wonCards.length == slike().length / 2) {
+          resultMistakes.innerHTML = `${chances}`;
+          resultTime.innerHTML = `${counter}`;
+          ended.style.height = "100%";
           wonCards = [];
-          playAgain = document.createElement("button");
-          playAgain.innerText = "Play again";
-          main.append(playAgain);
 
           playAgain.addEventListener("click", () => {
             window.location.reload();
           });
-          alert("Congarts you won");
         }
       } else {
+        chances++;
+        chancesEl.innerHTML = `${chances}`;
         editArray[0].children[0].classList.remove("rotate");
         editArray[0].children[1].classList.remove("rotateBack");
         editArray[1].children[0].classList.remove("rotate");

@@ -6,16 +6,25 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
+.info {
+  color: #faf0e6;
+}
+
+.score {
+}
+/* FAF0E6 , 5C5470 , B9B4C7 , FAF0E6 */
 .container {
-  background-color: rgb(154, 154, 114);
+  background-color: #352f44;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 10px;
 }
 .main {
-  background-color: rgb(149, 149, 108);
+  background-color: #352f44;
+
   box-shadow: 2px 2px 2px 2px black;
   display: flex;
   justify-content: center;
@@ -40,6 +49,7 @@
 
 .imgFront {
   width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -49,7 +59,7 @@
 }
 
 .back {
-  background-color: blue;
+  background-color: #b9b4c7;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -71,12 +81,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(
-    to right,
-    black 49%,
-    rgb(44, 43, 43) 50%,
-    rgb(216, 216, 216) 100%
-  );
+  background: #352f44;
   z-index: 10;
   height: 100%;
   display: flex;
@@ -86,27 +91,41 @@
   gap: 20px;
 }
 .startBtn {
-  background: linear-gradient(
-    to right,
-    rgb(255, 255, 255) 50%,
-    rgb(0, 0, 0) 50%
-  );
-
-  width: 11rem;
+  background: #faf0e6;
+  color: #5c5470;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 25rem;
   height: 4rem;
   border-radius: 10px;
   cursor: pointer;
   transition: all 1s ease;
-  opacity: 0.6;
 }
 
-.startBtn p {
-  font-size: 1.2rem;
+.end {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #faf0e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 1s ease;
+  flex-direction: column;
+  color: #352f44;
+  gap: 20px;
+}
+.end button {
+  background: #faf0e6;
+  color: #5c5470;
   font-weight: bold;
-  mix-blend-mode: difference;
-  color: white;
-}
-
-.startBtn:hover {
-  opacity: 1;
+  font-size: 1.2rem;
+  width: 25rem;
+  height: 4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 1s ease;
 }
