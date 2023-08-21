@@ -1,6 +1,5 @@
 # Simple Card Memory Game
 
-![Game Screenshot](bear.jpg)
 
 Welcome to the Simple Card Memory Game! This is a basic memory game implemented in JavaScript where players need to match pairs of cards with the same symbol. The game offers three difficulty modes: Easy, Medium, and Hard. The objective is to find all matching pairs in the shortest number of moves.
 
