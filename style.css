@@ -39,18 +39,16 @@
 }
 .main {
   background-color: #352f44;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
   width: 60%;
   height: auto;
   padding: 20px;
 }
 
 .card {
-  width: 8rem;
   height: 8rem;
   position: relative;
 }
@@ -193,7 +191,6 @@
     width: 100%;
   }
   .card {
-    width: 90px;
     height: 90px;
   }
 }
