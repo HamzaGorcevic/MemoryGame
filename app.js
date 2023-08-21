@@ -5,6 +5,10 @@ let easy = document.querySelector(".easy");
 let medium = document.querySelector(".medium");
 let chances = 0;
 let slikeArr = [
+  "viking.jpg",
+  "viking.jpg",
+  "bear.jpg",
+  "bear.jpg",
   "red.png",
   "yasuo.jpg",
   "crow.png",
@@ -54,6 +58,7 @@ let wonCards = [];
 let editArray = [];
 let counter = 0;
 let time = document.querySelector(".time");
+
 function createTable(mode, len) {
   let counting = setInterval(() => {
     counter++;

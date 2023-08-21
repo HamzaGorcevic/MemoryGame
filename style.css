@@ -9,6 +9,13 @@
 .info {
   color: #faf0e6;
 }
+
+.restart {
+  width: 200px;
+  height: 40px;
+  background: #352f44;
+  color: #faf0e6;
+}
 .title {
   color: #faf0e6;
   font-weight: bold;
@@ -43,8 +50,8 @@
 }
 
 .card {
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
   position: relative;
 }
 .hard {
