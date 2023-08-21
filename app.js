@@ -5,12 +5,14 @@ let easy = document.querySelector(".easy");
 let medium = document.querySelector(".medium");
 let chances = 0;
 let slikeArr = [
+  "red.png",
   "yasuo.jpg",
   "crow.png",
   "leesin.jpg",
   "yasuo.jpg",
   "crow.png",
   "leesin.jpg",
+  "red.png",
 ];
 easy.addEventListener("click", () => {
   document.querySelector(".startMain").style.display = "none";
@@ -38,7 +40,7 @@ document.querySelector(".hard").addEventListener("click", () => {
     "lion.png"
   );
   slike();
-  createTable("hard");
+  createTable("hard", slikeArr.length);
 });
 
 function slike() {
@@ -52,7 +54,7 @@ let wonCards = [];
 let editArray = [];
 let counter = 0;
 let time = document.querySelector(".time");
-function createTable(mode) {
+function createTable(mode, len) {
   let counting = setInterval(() => {
     counter++;
     time.innerHTML = `${counter}`;
@@ -67,7 +69,7 @@ function createTable(mode) {
     img.setAttribute("src", el);
     img.classList.add("imgFront");
     Card.classList.add("card");
-    mode != "easy" ? Card.classList.add("hard") : "";
+    // mode != "easy" ? Card.classList.add("hard") : "";
     Card.append(img);
 
     let back = document.createElement("div");

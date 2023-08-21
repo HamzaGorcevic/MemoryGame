@@ -9,7 +9,15 @@
 .info {
   color: #faf0e6;
 }
-
+.title {
+  color: #faf0e6;
+  font-weight: bold;
+  font-size: 43px;
+  position: absolute;
+  top: 10%;
+  font-family: "Acme", sans-serif;
+  font-family: "Barriecito", cursive;
+}
 .score {
 }
 /* FAF0E6 , 5C5470 , B9B4C7 , FAF0E6 */
@@ -24,15 +32,13 @@
 }
 .main {
   background-color: #352f44;
-
-  box-shadow: 2px 2px 2px 2px black;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  width: 40rem;
-  min-height: 30rem;
+  width: 60%;
+  height: auto;
   padding: 20px;
 }
 
@@ -128,4 +134,59 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 1s ease;
+  position: relative;
+  overflow: hidden;
+}
+.playAgain:hover::after,
+.playAgain:hover::before {
+  width: 50%;
+}
+
+.playAgain::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: start;
+
+  content: "\00a0 again ";
+  background-color: #352f44;
+  width: 0%;
+  height: 100%;
+  transition: width 0.5s;
+  color: #faf0e6;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.playAgain::after {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  color: #faf0e6;
+  top: 0;
+  left: 0;
+  content: "Play";
+  background-color: #352f44;
+  width: 0%;
+  height: 100%;
+  transition: width 0.5s;
+}
+@media (max-width: 1000px) {
+  .main {
+    width: 100%;
+  }
+  /* .card {
+    width: 70px;
+    height: 70px;
+  } */
+}
+@media (max-width: 700px) {
+  .main {
+    width: 100%;
+  }
+  .card {
+    width: 90px;
+    height: 90px;
+  }
 }
