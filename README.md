@@ -2,8 +2,13 @@
 
 
 Welcome to the Simple Card Memory Game! This is a basic memory game implemented in JavaScript where players need to match pairs of cards with the same symbol. The game offers three difficulty modes: Easy, Medium, and Hard. The objective is to find all matching pairs in the shortest number of moves.
+## URL
+https://hamzagorcevic.github.io/MemoryGame/
 
-## How to Play
+## Image
+
+#![Screenshot 2023-08-21 142254](https://github.com/HamzaGorcevic/MemoryGame/assets/88393813/904ac688-99be-4840-933f-aa73a623bb4a)
+# How to Play
 
 1. **Select a Difficulty**: When you launch the game, you'll be prompted to choose a difficulty mode. Each mode varies in the number of cards and their arrangement on the board.
 
